@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const list = document.querySelector('ul')
     const addForm = document.querySelector('#add-book')
     const button = document.querySelector('button')
-    const Add = document.querySelector('#Add').value
+    // const AddForm = addForm.querySelector('input[type="text"]').value
     const hideBox = document.querySelector('#hide')
     const books = document.querySelectorAll('li')
     const search = document.querySelector('#search');
@@ -23,24 +23,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
         e.preventDefault
         
 
-        // create Element///
-        const li= document.createElement('li')
-        const bookName= document.createElement('span')
-        const dltBtn= document.createElement('span')
+            // Get the value of the input field
+        const AddForm = addForm.querySelector('input[type="text"]').value;
 
-    // append to dom
+        // create Element///'
+        const li = document.createElement('li');
+        const bookName = document.createElement('span');
+        const dltBtn = document.createElement('span');
 
-        li.appendChild(bookName)
-        li.appendChild(dltBtn)
-        list.appendChild(li)
+        // append to dom
+        li.appendChild(bookName);
+        li.appendChild(dltBtn);
+        list.appendChild(li);
 
         // add Text
-        dltBtn.textContent='Delete'
-        bookName.textContent=Add
+        dltBtn.textContent = 'Delete';
+        bookName.textContent = AddForm;
 
         // add class///
-        bookName.classList.add('nam')
-        dltBtn.classList.add('delete')
+        bookName.classList.add('name');
+        dltBtn.classList.add('delete');
     })
 
     hideBox.addEventListener('change' ,(e)=>{
